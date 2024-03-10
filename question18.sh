@@ -1,11 +1,11 @@
 git clone https://github.com/ian-knight-uofa/git-practice-04.git
 cd git-practice-04
-git branch -a
+git fetch --all
+git branch -r
 git checkout main
-git merge $(git branch -r --list "origin/ready*")
-git add .
-git commit -m "Merge branches beginning with 'ready' into main"
-git branch -r --list "origin/ready*" | xargs -I{} git push origin --delete {}
-git checkout main
-git pull
-git branch -r --list "origin/update*" | xargs -I{} git checkout {} && git merge main
+git merge ready/*
+git commit -am "Merge ready branches into main"
+git branch -r --list "origin/ready/*" | xargs git push --delete origin
+git checkout update/*
+git merge main
+git commit -am "Update branch with latest changes from main"
