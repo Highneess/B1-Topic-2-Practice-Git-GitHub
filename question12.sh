@@ -1,4 +1,4 @@
 git checkout branch2
-git restore file4
-git add file4
-git commit -m "Restore and commit uncommitted changes"
+git stash pop
+echo "git checkout branch2" > question12.sh
+echo "git stash pop" >> question12.sh
